@@ -11,7 +11,7 @@ services:
     ports:
       - "3310:3306"
     volumes:
-      - my-db:/var/lib/mysql
+      - ./data:/var/lib/mysql
     networks:
       - my-net
   phpmyadmin:
@@ -27,7 +27,5 @@ services:
       - PMA_PASSWORD=root
     networks:
       - my-net
-volumes:
-  my-db: null
 networks:
   my-net: null
