@@ -1,5 +1,8 @@
-package bzh.redge.mysql;
+package bzh.redge.mysql.person;
 
+import lombok.Builder;
+
+@Builder
 public class Person {
 
     private int id;

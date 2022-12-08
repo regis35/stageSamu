@@ -1,4 +1,4 @@
-package bzh.redge.mysql;
+package bzh.redge.mysql.person;
 
 import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -10,7 +10,11 @@ import java.util.List;
 @AllArgsConstructor
 public class PersonDaoImpl implements PersonDao {
 
+    private static final String SELECT_PERSON = "";
+
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    private PersonRowMapper rowMapper;
+
     @Override
     public Person create(Person person) {
         return null;

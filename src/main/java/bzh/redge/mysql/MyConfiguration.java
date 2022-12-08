@@ -25,7 +25,6 @@ public class MyConfiguration {
 
     @Bean
     public NamedParameterJdbcTemplate namedParameterJdbcTemplate() {
-        log.info("---> Create NamedParameterJdbcTemplate");
         return new NamedParameterJdbcTemplate(ds);
     }
 

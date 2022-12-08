@@ -1,4 +1,4 @@
-package bzh.redge.mysql;
+package bzh.redge.mysql.person;
 
 import java.util.List;
 
