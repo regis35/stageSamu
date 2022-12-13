@@ -10,11 +10,20 @@ import org.springframework.stereotype.Component;
 public class InitBdd {
 
     private static String CREATE_TABLE_PERSON = "CREATE TABLE IF NOT EXISTS Persons (" +
-            "    PersonID int," +
-            "    LastName varchar(255)," +
-            "    FirstName varchar(255)," +
-            "    Address varchar(255)," +
-            "    City varchar(255)" +
+            "    personId bigint NOT NULL AUTO_INCREMENT," +
+            "    lastName varchar(255)," +
+            "    firstName varchar(255)," +
+            "    address varchar(255)," +
+            "    city varchar(255)," +
+            "    PRIMARY KEY (personId) "+
+            ");";
+
+    private static String CREATE_TABLE_IMAGE = "CREATE TABLE IF NOT EXISTS Images (" +
+            "    fileId bigint NOT NULL AUTO_INCREMENT," +
+            "    file LONGBLOB," +
+            "    personIdFK bigint," +
+            "    PRIMARY KEY (fileId), "+
+            "    FOREIGN KEY (personIdFK) REFERENCES Persons(PersonID)"+
             ");";
 
     private JdbcTemplate jdbcTemplate;
@@ -23,6 +32,7 @@ public class InitBdd {
     public void init() {
 
         jdbcTemplate.execute(CREATE_TABLE_PERSON);
+        jdbcTemplate.execute(CREATE_TABLE_IMAGE);
 
     }
 

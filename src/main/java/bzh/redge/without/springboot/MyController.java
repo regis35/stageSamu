@@ -10,7 +10,6 @@ public class MyController {
     private ShopBusiness shopBusiness;
     private OtherBusiness otherBusiness;
 
-
     public void entryPoint(Shop shop) {
         log.info("[entryPoint] start");
         otherBusiness.something();

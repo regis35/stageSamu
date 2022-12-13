@@ -1,4 +1,6 @@
-package bzh.redge.mysql.person;
+package bzh.redge.mysql.dao;
+
+import bzh.redge.mysql.data.Person;
 
 import java.util.List;
 
@@ -9,6 +11,8 @@ public interface PersonDao {
     List<Person> findAll();
 
     Person findById(int id);
+
+    Person findByFirstNameAndLastName(String firstName, String lastName);
 
     void remove(int id);
 
